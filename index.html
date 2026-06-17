@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spendly</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="logo">
+          <h1>Spendly</h1>
+        </div>
+        <p class="tagline">Donde se fue el dinero?</p>
+      </header>
+
+      <main>
+        <section class="form-section">
+          <h2>Agregar gasto</h2>
+          <form id="expense-form">
+            <div class="form-row">
+              <input type="text" id="description" placeholder="Descripción" required />
+              <input type="number" id="amount" placeholder="Monto" step="0.01" min="0" required />
+            </div>
+            <div class="form-row">
+              <select id="category" required>
+                <option value="">Categoría</option>
+                <option value="Comida">🍔 Comida</option>
+                <option value="Transporte">🚗 Transporte</option>
+                <option value="Ocio">🎮 Ocio</option>
+                <option value="Salud">💊 Salud</option>
+                <option value="Educación">📚 Educación</option>
+                <option value="Otros">📦 Otros</option>
+              </select>
+              <input type="date" id="date" required />
+            </div>
+            <button type="submit">Agregar gasto</button>
+          </form>
+        </section>
+
+        <section class="expenses-section">
+          <div class="expenses-header">
+            <h2>Mis gastos</h2>
+            <div class="total">
+              Total: <span id="total">$0.00</span>
+            </div>
+          </div>
+          <div id="expenses-list"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
