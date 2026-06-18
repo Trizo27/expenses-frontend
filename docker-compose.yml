@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build: .
+    container_name: expenses-frontend
+    ports:
+      - "80:80"
+    networks:
+      - expenses-backend_expenses-network
+
+networks:
+  expenses-backend_expenses-network:
+    external: true
